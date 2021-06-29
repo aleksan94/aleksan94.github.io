@@ -158,13 +158,29 @@
 			</section>
 
 			<script>
-				$(".center").slick({
-					dots: true,
-					infinite: true,
-					speed: 300,
-					slidesToShow: 1,
-					adaptiveHeight: true
-				});			
+				let interval = setInterval(function() {
+					if('slick' in $('.slider')) {
+						clearInterval(interval);
+
+						$(".slider").slick({
+							dots: true,
+							infinite: true,
+							speed: 300,
+							slidesToShow: 1,
+							adaptiveHeight: true
+						});	
+					}
+				}, 10);
+
+				// window.onload = function() {
+				// 	$(".center").slick({
+				// 			dots: true,
+				// 			infinite: true,
+				// 			speed: 300,
+				// 			slidesToShow: 1,
+				// 			adaptiveHeight: true
+				// 		});	
+				// }
 			</script>
 
 		</div>
